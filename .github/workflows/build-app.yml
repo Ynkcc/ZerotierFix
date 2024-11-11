@@ -52,5 +52,5 @@ jobs:
         if: github.event_name != 'pull_request'
         name: Upload signed app APK
         with:
-          name: Signed app bundle
-          path: ${{steps.sign_app.outputs.signedReleaseFile}}
+          name: debug bundle
+          path: ./app-debug.apk
