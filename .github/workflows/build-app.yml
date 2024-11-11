@@ -34,6 +34,9 @@ jobs:
           BUILD_TOOL_VERSION=$(ls /usr/local/lib/android/sdk/build-tools/ | tail -n 1)
           echo "BUILD_TOOL_VERSION=$BUILD_TOOL_VERSION" >> $GITHUB_ENV
           echo Last build tool version is: $BUILD_TOOL_VERSION
+          echo $secrets.SIGNING_KEY
+          echo ALIAS is $secrets.ALIAS
+          echo $secrets.KEY_STORE_PASSWORD
       - uses: r0adkll/sign-android-release@v1
         if: github.event_name != 'pull_request'
         name: Sign app APK
